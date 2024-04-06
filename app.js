@@ -1,5 +1,5 @@
 const express = require('express');
-const seed = require('./init');
+const seed = require('./src/init.js');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
