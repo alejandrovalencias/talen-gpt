@@ -23,48 +23,19 @@ const generate = async (text) => {
 const run = async (text) => {
     try {
         const response = await generate(text);
-        console.log('**************** execute util *******************');
-        console.log(text);
+        console.log('**************** run despues de generate util *******************');
         console.log(response);
-        console.log('**************** execute util *******************');
-        const jresponse = JSON.parse(response);
-        return jresponse;
+        console.log('**************** run despues de generate util *******************');
+
+        const result = JSON.parse(response);
+
+        console.log('**************** run despues de JSON util *******************');
+        console.log(result);
+        console.log('**************** run despues de JSON util *******************');
+        return result;
     } catch (e) {
-        console.log('.................. util 31 ...........');
-        console.log(e);
-        console.log('......................................');
-        execute(text);
+        throw { mensaje: 'Error con la respuesta de chat gpt', e };
     }
 };
 
-// const run = async (text) => {
-//     let result = await execute(text);
-//     console.log(':::::::::::::::::::: run util ::::::::::::::');
-//     console.log(text);
-//     console.log(result);
-//     console.log(':::::::::::::::::::: run util ::::::::::::::');
-//     if (result !== undefined) {
-//         return result;
-//     }
-//     run(text);
-// }
-
-// Se obtiene la respuesta de chat gpt y se consume la api en laravel de las entidades
-const insertApi = async ({ text, urlApi }) => {
-    try {
-        const datosChatGpt = await run(text);
-        if (datosChatGpt !== undefined) {
-            console.log(' ------------------------------- insertApi --------------------------');
-            console.log(datosChatGpt);
-            console.log(' ------------------------------- insertApi --------------------------');
-            return await Promise.all(datosChatGpt.map(data =>
-                axios.post(urlApi, data)
-            ));
-        }
-        insertApi({ text, urlApi });
-    } catch (e) {
-        insertApi({ text, urlApi });
-    }
-}
-
-module.exports = { insertApi, run };
+module.exports = { run };
