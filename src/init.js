@@ -13,10 +13,10 @@ const seed = async () => {
         return [];
     }
     // // Se insertan las companies
-    await companies(listId);
+    // await companies(listId);
 
-    // // Se insertan las challenges
-    await challenges(listId);
+    // // // Se insertan las challenges
+    // await challenges(listId);
     return listId;
 }
 // seed();
