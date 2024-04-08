@@ -7,7 +7,7 @@ app.use(express.json());
 
 // Ruta para obtener todos los usuarios
 app.get('/api/gpt', async (req, res) => {
-  const data = await seed();
+  const data = await seed(req);
   res.json({ data });
 });
 
