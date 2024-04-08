@@ -23,3 +23,17 @@ Decargar el proyecto y correr los siguientes comandos
 
 
 
+
+## Nota
+
+- http://localhost:3000/api/gpt?cha=0&com=0&pro=0
+- https://talen-gpt.onrender.com/api/gpt?cha=0&com=0&pro=0
+
+los parametros
+- chat = challenges
+- com = companies
+- pro = programs
+Son todos opcionales, si no se envian siempre va a generar el insert para la entidad, si se envian con un valor diferente a 1, no generará el insert de esa entidad, la unica entidad que siempre genera insert es users
+
+
+
