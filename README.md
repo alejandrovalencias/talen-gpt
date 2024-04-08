@@ -10,8 +10,9 @@ Se crea api con metodo GET para consumir la api de chat gpt y insertar cada enti
 Decargar el proyecto y correr los siguientes comandos
 
 ```bash
-  npm install 
+  git clone https://github.com/alejandrovalencias/talen-gpt.git
   cd talen-gpt
+  npm install 
   npm start
 ```
     
