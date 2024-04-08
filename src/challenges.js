@@ -12,6 +12,7 @@ const runChallenges = async (listId) => {
         const text = `${prompt} , user_id has to be a number between these: ${listId.join(',')}`;
         const datosChatGpt = await run(text);
         if (datosChatGpt != 'undefined') {
+            console.log(':::::::::::::::::::::: Inicio insert challenges ::::::::::::::::::::::');
             const resultInsertApi = await Promise.all(datosChatGpt.map(data =>
                 axios.post(urlApi, data)
             ));

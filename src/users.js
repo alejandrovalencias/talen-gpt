@@ -9,6 +9,7 @@ const runUser = async () => {
     try {
         const datosChatGpt = await run(prompt);
         if (datosChatGpt != 'undefined') {
+            console.log(':::::::::::::::::::::: Inicio insert users ::::::::::::::::::::::');
             const resultInsertApi = await Promise.all(datosChatGpt.map(data =>
                 axios.post(urlApi, data)
             ));

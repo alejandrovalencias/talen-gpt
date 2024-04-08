@@ -1,6 +1,7 @@
 const users = require('./users');
 const companies = require('./companies');
 const challenges = require('./challenges');
+const programs = require('./programs');
 
 const seed = async () => {
     let responseApi = {};
@@ -15,14 +16,19 @@ const seed = async () => {
         responseApi.users = usersId;
 
         //Se insertan las companies
-        const companiesId = await companies(usersId);
-        //Se guardan los id los inserts sobre la tabla users
-        responseApi.companies = companiesId;
+        // const companiesId = await companies(usersId);
+        // //Se guardan los id los inserts sobre la tabla users
+        // responseApi.companies = companiesId;
+
+        // //Se insertan las challenges
+        // const challengesId = await challenges(usersId);
+        // //Se guardan los id los inserts sobre la tabla users
+        // responseApi.challenges = challengesId;
 
         //Se insertan las challenges
-        const challengesId = await challenges(usersId);
+        const programsId = await programs(usersId);
         //Se guardan los id los inserts sobre la tabla users
-        responseApi.challenges = challengesId;
+        responseApi.programs = programsId;
 
         return responseApi;
     } catch (e) {
